@@ -12,10 +12,27 @@ class CreateLessonsTable extends Migration
      * @return void
      */
     public function up()
-    {
+    {//        'name', 'video', 'material','assignment','assignmentAnswer','course_id'
+
         Schema::create('lessons', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('video');
+            $table->string('material');
+            $table->string('assignment');
+            $table->string('assignmentAnswer');
+            $table->unsignedBigInteger('course_id');
+            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
+
+
+
+
+
+
+
+
             $table->timestamps();
+
         });
     }
 

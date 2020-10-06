@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Course;
 
 
 class Teacher extends Authenticatable implements JWTSubject
@@ -47,6 +48,10 @@ class Teacher extends Authenticatable implements JWTSubject
     public function getJWTCustomClaims()
     {
         return [];
+    }
+    //relationship 1 to * with course
+     public function courses(){
+        return $this->hasMany(Course::class);
     }
 
 
