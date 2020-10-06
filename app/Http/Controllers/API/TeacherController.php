@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Teacher;
 use Illuminate\Support\Facades\Validator;
-class TeachersController extends Controller
+class TeacherController extends Controller
 {
     public function __construct()
     {

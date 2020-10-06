@@ -20,7 +20,7 @@ class CreateLessonsTable extends Migration
             $table->string('video');
             $table->string('material');
             $table->string('assignment');
-            $table->string('assignmentAnswer');
+            $table->string('assignmentAnswer')->nullable();
             $table->unsignedBigInteger('course_id');
             $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
 
